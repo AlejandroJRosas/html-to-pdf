@@ -8,7 +8,7 @@
     "start": "npm run prod",
     "prod": "node build/index.js",
     "chromium": "npx puppeteer browsers install chrome",
-    "build": "tsc && npm run chromium"
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
