@@ -21,7 +21,9 @@ app.get('/ping', (_req, res) => {
 })
 
 app.post('/convert', async (req, res) => {
+  console.log('HTML Body: ', req.body)
   const pdf = await convertToPDF(req.body)
+  console.log('Converted PDF Buffer: ', pdf)
   return res.set('content-type', 'application/pdf').send(pdf)
 })
 
