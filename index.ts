@@ -16,7 +16,11 @@ app.use(cors())
 app.use(bodyParser.text({ type: 'text/html' }))
 
 // Routes
-app.post('/ping', async (req, res) => {
+app.get('/ping', (_req, res) => {
+  return res.json({ message: 'galapin' })
+})
+
+app.post('/convert', async (req, res) => {
   const pdf = await convertToPDF(req.body)
   return res.set('content-type', 'application/pdf').send(pdf)
 })
