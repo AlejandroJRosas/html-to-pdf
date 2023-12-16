@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import express from 'express'
-import { PORT } from './src/config'
+import { PORT } from './config'
 import bodyParser from 'body-parser'
 import cors from 'cors'
-import { convertToPDF } from './src/actions/convert'
+import { convertToPDF } from './actions/convert'
 
 // App Declaration
 const app = express()
