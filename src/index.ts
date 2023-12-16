@@ -17,7 +17,7 @@ app.use(bodyParser.text({ type: 'text/html' }))
 
 // Routes
 app.get('/ping', (_req, res) => {
-  return res.json({ message: 'galapin' })
+  res.status(200).json({ test: 'todo piola en el microservicio' })
 })
 
 app.post('/convert', async (req, res) => {

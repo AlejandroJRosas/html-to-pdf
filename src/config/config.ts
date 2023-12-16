@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import dotenv from 'dotenv'
 
 dotenv.config()
