@@ -9,9 +9,8 @@ export async function convertToPDF (html: string): Promise<Buffer> {
   await page.emulateMediaType('screen')
 
   const pdf = await page.pdf({
-    margin: { top: '100px', right: '50px', bottom: '100px', left: '50px' },
-    printBackground: true,
-    format: 'A4'
+    format: 'LETTER',
+    printBackground: true
   })
 
   return pdf
