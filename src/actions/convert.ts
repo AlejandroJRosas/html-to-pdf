@@ -5,12 +5,18 @@ export async function convertToPDF (html: string): Promise<Buffer> {
     headless: 'new'
   })
   const page = await browser.newPage()
-  await page.setContent(html, { waitUntil: 'domcontentloaded' })
+  await page.setContent(html, { waitUntil: 'networkidle0' })
   await page.emulateMediaType('screen')
 
   const pdf = await page.pdf({
     format: 'LETTER',
-    printBackground: true
+    printBackground: true,
+    margin: {
+      top: '30px',
+      left: '50px',
+      right: '50px',
+      bottom: '30px'
+    }
   })
 
   return pdf
