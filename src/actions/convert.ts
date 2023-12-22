@@ -10,7 +10,13 @@ export async function convertToPDF (html: string): Promise<Buffer> {
 
   const pdf = await page.pdf({
     format: 'LETTER',
-    printBackground: true
+    printBackground: true,
+    margin: {
+      top: '30px',
+      bottom: '30px',
+      left: '50px',
+      right: '50px'
+    }
   })
 
   return pdf
