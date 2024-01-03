@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev src/index.ts",
-    "start": "npm run prod",
+    "start": "node build/index.js",
     "build": "tsc",
     "chrome": "npx puppeteer browsers install chrome",
-    "prod": "node build/index.js"
+    "deploy": "npm install && npx puppeteer browsers install chrome && tsc"
   },
   "keywords": [],
   "author": "",
