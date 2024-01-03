@@ -4,7 +4,6 @@ import { PORT } from './config'
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import { convertToPDF } from './actions/convert'
-import { convertToWebp } from './actions/html-to-webp'
 
 // App Declaration
 const app = express()
@@ -26,12 +25,6 @@ app.post('/convert', async (req, res) => {
   console.log('PDF Convertion')
   const pdf = await convertToPDF(req.body)
   return res.set('content-type', 'application/pdf').send(pdf)
-})
-
-app.post('/get-webp', async (req, res) => {
-  console.log('WEBP Screenshot')
-  const webp = await convertToWebp(req.body)
-  return res.set('content-type', 'image/webp').send(webp)
 })
 
 // Starting the server
